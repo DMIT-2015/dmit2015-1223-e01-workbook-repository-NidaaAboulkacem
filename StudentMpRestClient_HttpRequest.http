@@ -1,0 +1,46 @@
+
+### Create a new document
+POST https://dmit-demo-d69fc-default-rtdb.firebaseio.com/Student.json
+Content-Type: application/json
+
+{
+  "propertyName1": "property1Value",
+  "propertyName2": "property2Value"
+}
+
+
+### Create a new document
+POST https://dmit-demo-d69fc-default-rtdb.firebaseio.com/Student.json
+Content-Type: application/json
+
+{
+  "firstName": "Nidaa",
+  "lastName": "ab"
+}
+
+### GET All documents
+GET https://dmit-demo-d69fc-default-rtdb.firebaseio.com/Student.json
+
+### GET One document by key
+GET https://dmit-demo-d69fc-default-rtdb.firebaseio.com/Student/primaryKeyValue.json
+
+### UPDATE document - will replace all properties with the properties in the request body - if you miss a property it will be removed
+PUT https://dmit-demo-d69fc-default-rtdb.firebaseio.com/Student/primaryKeyValue.json
+Content-Type: application/json
+
+{
+  "propertyName1": "property1Value",
+  "propertyName2": "property2Value"
+}
+
+### DELETE document - use this if you want to delete a document
+DELETE https://dmit-demo-d69fc-default-rtdb.firebaseio.com/Student/primaryKeyValue.json
+
+
+### PATCH document - use this if you want to update some of the properties but not all of them
+PATCH https://dmit-demo-d69fc-default-rtdb.firebaseio.com/Student/primaryKeyValue.json
+Content-Type: application/json
+
+{
+  "propertyName": "propertyValue"
+}
