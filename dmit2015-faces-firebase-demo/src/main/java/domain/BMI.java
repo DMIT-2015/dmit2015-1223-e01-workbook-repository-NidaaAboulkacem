@@ -1,4 +1,4 @@
-package ca.nait.dmit.domain;
+package domain;
 
 public class BMI {
 
