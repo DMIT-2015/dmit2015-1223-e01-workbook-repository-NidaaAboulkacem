@@ -7,10 +7,6 @@ public class BMI {
     private int weight;
     private int height;
 
-    // 6. Generate default no argument
-    public BMI() {
-    }
-
     // 7. Generate getters
     public int getWeight() {
         return weight;
@@ -28,14 +24,18 @@ public class BMI {
         this.height = height;
     }
 
+    // 6. Generate default no argument
+    public BMI() {
+    }
+
     public BMI(int weight, int height){
         this.weight = weight;
         this.height = height;
     }
     public double bmi(){
-        return (703 * this.weight) / (this.height * this.height);
+        return (703 * this.weight) / Math.pow(this.height, 2);
     }
-
+    // integer
     public String bmiCategory(){
         double bmi = this.bmi();
         String category = "";

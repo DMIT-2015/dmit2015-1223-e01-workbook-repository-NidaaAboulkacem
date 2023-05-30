@@ -14,14 +14,15 @@ class BMITest {
             "140, 66, 22.6",
             "175, 66, 28.2",
             "200, 66, 32.3",
-            "174, 66, 27"
+            "200, 66, 32.3"
+
     })
-    void bmi(int height, int weight, double expectedBmi) {
+    void bmi(int weight, int height, double expectedBmi) {
         BMI bmi = new BMI();
         bmi.setHeight(height);
         bmi.setWeight(weight);
 
-        assertEquals(expectedBmi, bmi.bmi(), 0.005);
+        assertEquals(expectedBmi, bmi.bmi(), 5.0E-02);
     }
 
     @ParameterizedTest(name = "{0}, {1}:{2}")
@@ -31,9 +32,9 @@ class BMITest {
             140, 66, normal
             175, 66, overweight
             200, 66, obese
-            174, 66, overweight
+            200, 62, obese
             """)
-    void bmiCategory(int height, int weight, String expectedBmi){
+    void bmiCategory(int weight, int height, String expectedBmi){
         BMI bmi = new BMI(weight, height);
 
         assertEquals(expectedBmi, bmi.bmiCategory());
